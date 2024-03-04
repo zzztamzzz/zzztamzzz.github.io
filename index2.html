@@ -138,7 +138,8 @@
             .attr("class", "line-chart-path")
             .attr("d", line);
 
-        // Shenanigans for annimation, with the help of CHATGPT
+        // Shenanigans for annimation fix, with the help of CHATGPT
+        // Animation did not start from 1st datapoint, this piece of code fixes it
         var totalLength = path.node().getTotalLength();
 
         // Set the stroke-dasharray and stroke-dashoffset to the total length of the path
