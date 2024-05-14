@@ -13,3 +13,13 @@ https://d3js.org/
 https://observablehq.com/@d3/gallery?utm_source=d3js-org&utm_medium=hero&utm_campaign=try-observable
 ## Chart.js
 https://www.chartjs.org/docs/latest/samples/information.html
+
+# Final Project
+## Python Pandas
+https://pandas.pydata.org/docs/
+## Plotly with examples
+https://plotly.com/python/
+## Data Files used along with charts
+https://github.com/zzztamzzz/CS617-Visualizing-Boston/tree/main/final_proj/attempts/finalizing/boston_filtered
+https://github.com/zzztamzzz/CS617-Visualizing-Boston/tree/main/final_proj/attempts/finalizing/population
+
