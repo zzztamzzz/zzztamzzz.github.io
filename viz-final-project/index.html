@@ -18,6 +18,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#walkability">Walkability</a></li>
                 <li><a href="#conclusion">Conclusion</a></li>
+                <li><a href="#credits">Credits</a></li>
             </ul>
         </nav>
     </header>
@@ -67,13 +68,15 @@
         <section id="walkability" class="content hidden">
             <h2>Walkability Index</h2>
             <p>Introduction to the walkability index...</p>
-            <iframe src="charts/walkability_mass_correlation_matrix.html" frameborder="0"></iframe>
-            <iframe src="charts/Suffolk_walkability_vs_employment.html" frameborder="0"></iframe>
-            <iframe src="charts/Suffolk_walkability_vs_auto0.html" frameborder="0"></iframe>
-            <iframe src="charts/Suffolk_walkability_vs_auto1.html" frameborder="0"></iframe>
-            <iframe src="charts/Suffolk_walkability_vs_auto2p.html" frameborder="0"></iframe>
-            <iframe src="charts/Suffolk_walkability_vs_population.html" frameborder="0"></iframe>
-            <iframe src="charts/Suffolk_walkability_vs_shape_area.html" frameborder="0"></iframe>
+            <div class="charts-container walkability-charts">
+                <iframe src="charts/walkability_mass_correlation_matrix.html" frameborder="0"></iframe>
+                <iframe src="charts/Suffolk_walkability_vs_employment.html" frameborder="0"></iframe>
+                <iframe src="charts/Suffolk_walkability_vs_auto0.html" frameborder="0"></iframe>
+                <iframe src="charts/Suffolk_walkability_vs_auto1.html" frameborder="0"></iframe>
+                <iframe src="charts/Suffolk_walkability_vs_auto2p.html" frameborder="0"></iframe>
+                <iframe src="charts/Suffolk_walkability_vs_population.html" frameborder="0"></iframe>
+                <iframe src="charts/Suffolk_walkability_vs_shape_area.html" frameborder="0"></iframe>
+            </div>
             <button onclick="prevSection('projects')">Previous</button>
             <button onclick="nextSection('conclusion')">Next</button>
         </section>
@@ -81,11 +84,20 @@
             <h2>Conclusion</h2>
             <p>Summary of the factors impacting traffic...</p>
             <button onclick="prevSection('walkability')">Previous</button>
+            <button onclick="nextSection('credits')">Next</button>
+        </section>
+        <section id="credits" class="content hidden">
+            <h2>Credits</h2>
+            <p>Here are the references for the data used in this project:</p>
+            <ul>
+                <li>MassBuilds</li>
+                <li>MacroTrends</li>
+                <li>Data.Gov</li>
+                <!-- Add more references as needed -->
+            </ul>
+            <button onclick="prevSection('conclusion')">Previous</button>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Traffic in Boston. All rights reserved.</p>
-    </footer>
     <script src="script.js"></script>
 </body>
 </html>
