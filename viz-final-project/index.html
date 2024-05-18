@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traffic in Boston</title>
+    <title>Boston Traffic Insights: Population and Public Projects Impact</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Traffic in Boston</h1>
+        <h1>Boston Traffic Insights</h1>
         <nav>
             <ul>
                 <li><a href="#introduction">Introduction</a></li>
@@ -41,7 +42,7 @@
                     <p class="caption">Boston again, at 6:00pm on I-90 W</p>
                 </div>
             </div>
-            <button onclick="nextSection('boston-population')">Next</button>
+            <div class="page-number">1 of 5</div>
         </section>
         <section id="boston-population" class="content hidden">
             <h2>Population Increase in Boston</h2>
@@ -57,7 +58,7 @@
                 <li><strong>Recent Decline (2018-2019):</strong> A more recent decrease occurred between 2018 and 2019, where the percentage change dropped from 0.37% in 2018 to -0.02% in 2019. This slight negative growth might indicate specific short-term challenges that impacted the population during that year.</li>
                 <li><strong>Historical Fact:</strong> The decline from 2018 to 2019 likely reflects the early impacts of the COVID-19 pandemic. The pandemic caused significant disruptions to daily life, economic activities, and migration patterns, leading to changes in population growth.</li>
                 <li><strong>Steady Climb Since 2019:</strong> Since 2019, Boston has been witnessing a steady climb in population. This trend suggests a recovery and consistent growth, highlighting the city's ongoing appeal and resilience.</li>
-                <li><strong>Historical Fact:</strong> The steady climb since 2019 may be attributed to the gradual recovery from the initial shock of the COVID-19 pandemic, as well as continued economic development and urban renewal projects in Boston.</li>
+                <li><strong>Fact:</strong> The steady climb since 2019 may be attributed to the gradual recovery from the initial shock of the COVID-19 pandemic, as well as continued economic development and urban renewal projects in Boston.</li>
             </ul>
             <p><strong>Overall Trends:</strong> The chart spans over seven decades, showing how the population has generally increased despite the fluctuations in annual percentage changes. While some years saw significant rises and falls, the long-term trend points towards a growing city, adapting and thriving through various phases.</p>
             <p><strong>Fun Facts:</strong></p>
@@ -68,14 +69,12 @@
             <div class="charts-container population-charts">
                 <iframe src="charts/boston_population_combination_chart.html" frameborder="0"></iframe>
             </div>
-            <p>The colors used in the population chart are:</p>
+            <p>Chart Legend:</p>
             <ul>
-                <li style="color: #091F2F;">Charles Blue: Boston population data</li>
-                <li style="color: #FB4D42;">Freedom Trail Red: Other relevant data</li>
-                <!-- Add other relevant descriptions and colors here -->
+                <li style="color: #091F2F;">Charles Blue: Boston Population</li>
+                <li style="color: #FB4D42;">Freedom Trail Red: Annual Percentage Change</li>
             </ul>
-            <button onclick="prevSection('introduction')">Previous</button>
-            <button onclick="nextSection('projects')">Next</button>
+            <div class="page-number">2 of 5</div>
         </section>
         <section id="projects" class="content hidden">
             <h2>City Projects in Boston</h2>
@@ -108,29 +107,53 @@
                 <li style="color: #2ca02c;">Green: Projected Projects</li>
                 <li style="color: #9467bd;">Purple: In Construction Projects</li>
                 <li style="color: #d62728;">Red: Cancelled Projects</li>
-                <li style="color: #8c564b;">Brown: Total Spending</li>
+                <li style="color: #8c564b;">Brown: Total Spending Towards Projects For The Year</li>
             </ul>
-            <button onclick="prevSection('boston-population')">Previous</button>
-            <button onclick="nextSection('conclusion')">Next</button>
+            <div class="page-number">3 of 5</div>
         </section>
         <section id="conclusion" class="content hidden">
             <h2>Conclusion</h2>
-            <p>Summary of the factors impacting traffic...</p>
-            <button onclick="prevSection('projects')">Previous</button>
-            <button onclick="nextSection('credits')">Next</button>
+            <p>The data visualizations presented in this article highlight two critical factors impacting traffic in Boston: the steady increase in population and the numerous public projects aimed at improving the city's infrastructure. As we analyze these trends, several key insights emerge that underscore the need for strategic planning and effective execution.</p>
+            <p><strong>Key Insights:</strong></p>
+            <ul>
+                <li><strong>Continued Population Growth:</strong> The population of Boston has been steadily increasing over the decades, and this trend is likely to continue. This growth brings with it increased demands on the city's infrastructure, necessitating proactive measures to accommodate the rising number of residents and visitors.</li>
+                <li><strong>Need for Improved Infrastructure:</strong> To manage the growing population, Boston must focus on building and enhancing its infrastructure. This includes expanding public transportation, improving road networks, and developing pedestrian-friendly areas. These efforts are crucial to prevent further congestion and ensure smooth mobility for all.</li>
+                <li><strong>Quality Over Quantity in Public Projects:</strong> While numerous public projects have been undertaken, it is essential to prioritize quality over quantity. Each project should be carefully evaluated to determine its potential impact on traffic control. Projects that do not contribute to better traffic management should be reconsidered or redesigned to ensure they effectively address the city's needs.</li>
+            </ul>
+            <p><strong>Making the Right Decisions:</strong></p>
+            <ul>
+                <li><strong>Strategic Planning:</strong> The city needs a comprehensive, long-term plan that anticipates future growth and allocates resources efficiently. Strategic planning will help prioritize projects that offer the most significant benefits in terms of traffic management and overall urban development.</li>
+                <li><strong>Stakeholder Involvement:</strong> Involving community stakeholders in the planning process can provide valuable insights and ensure that projects align with the needs of the residents. Public consultations and feedback can help identify the most pressing issues and develop solutions that are widely supported.</li>
+            </ul>
+            <p><strong>Conclusion:</strong></p>
+            <p>In conclusion, the data underscores the urgent need for Boston to continuously improve its infrastructure to keep pace with population growth. By focusing on high-quality projects that genuinely enhance traffic management, the city can create a more efficient, sustainable, and livable environment for all. The future of Boston's traffic depends on the strategic decisions made today, and it is crucial to approach these challenges with foresight and a commitment to excellence.</p>
+            <div class="page-number">4 of 5</div>
         </section>
         <section id="credits" class="content hidden">
             <h2>Credits</h2>
-            <p>Here are the references for the data used in this project:</p>
+            <p>The charts in this project were generated using the following Python libraries:</p>
             <ul>
-                <li>MassBuilds</li>
-                <li>MacroTrends</li>
-                <li>Data.Gov</li>
-                <!-- Add more references as needed -->
+                <li><a href="https://pandas.pydata.org/" target="_blank">pandas</a> for data manipulation and analysis.</li>
+                <li><a href="https://plotly.com/python/" target="_blank">plotly</a> for creating interactive data visualizations.</li>
             </ul>
-            <button onclick="prevSection('conclusion')">Previous</button>
+            <p>For more information on Boston's population trends, visit:</p>
+            <ul>
+                <li><a href="https://www.macrotrends.net/global-metrics/cities/22939/boston/population" target="_blank">Boston Metro Area Population 1950-2024</a></li>
+                <li><a href="https://www.macrotrends.net/global-metrics/cities/22939/boston/population" target="_blank">Macrotrends</a></li>
+                <li><a href="https://www.macrotrends.net/global-metrics/cities/22939/boston/population" target="_blank">Source</a></li>
+            </ul>
+            <p>To explore real estate development projects in the Greater Boston region, check out <a href="https://www.massbuilds.com/map?municipal[]=Boston" target="_blank">MasBuilds</a>.</p>
+            <p>All the files and code for this project can be found on our <a href="https://github.com/zzztamzzz/CS617-Visualizing-Boston/tree/main/final_proj/attempts" target="_blank">GitHub repository</a>.</p>
+            <p>Created with assistance from <a href="https://www.openai.com/chatgpt" target="_blank">ChatGPT</a>.</p>
+            <p><strong>Personal Message:</strong></p>
+            <p>This website was created by Tamzid Choudhury, a Computer Science senior at the University of Massachusetts Boston. This project is part of the Computer Science Special Topics course "CS480/617 Visualizing Boston" for the Spring 2024 semester, instructed by Professor <a href="https://danielhaehn.com/" target="_blank">Daniel Haehn</a>. Thank you!</p>
+            <div class="page-number">5 of 5</div>
         </section>
     </main>
+    <footer>
+        <p>© 2024 Boston Traffic Insights. All rights reserved.</p>
+    </footer>
+    <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
     <script src="script.js"></script>
 </body>
 </html>
