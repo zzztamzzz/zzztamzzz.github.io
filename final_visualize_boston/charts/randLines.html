@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>D3 Grid Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        svg {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+        }
+    </style>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <svg width="500" height="500"></svg>
+    <script>
+        const svg = d3.select("svg");
+        const width = +svg.attr("width");
+        const height = +svg.attr("height");
+
+        const gridSize = 50;
+        const numCols = width / gridSize;
+        const numRows = height / gridSize;
+
+        // gridlines
+        for (let i = 0; i <= numCols; i++) {
+            svg.append("line")
+                .attr("x1", i * gridSize)
+                .attr("y1", 0)
+                .attr("x2", i * gridSize)
+                .attr("y2", height)
+                .attr("stroke", "#ccc")
+                .attr("stroke-width", 1);
+        }
+
+        for (let i = 0; i <= numRows; i++) {
+            svg.append("line")
+                .attr("x1", 0)
+                .attr("y1", i * gridSize)
+                .attr("x2", width)
+                .attr("y2", i * gridSize)
+                .attr("stroke", "#ccc")
+                .attr("stroke-width", 1);
+        }
+
+        let lines = [];
+        let lineCount = 0;
+        const totalLines = 10;
+        let interval;
+
+        // Function to draw a line
+        function drawLine() {
+            const x1 = Math.random() * width;
+            const y1 = Math.random() * height;
+            const x2 = Math.random() * width;
+            const y2 = Math.random() * height;
+
+            const line = svg.append("line")
+                .attr("x1", x1)
+                .attr("y1", y1)
+                .attr("x2", x1)
+                .attr("y2", y1)
+                .attr("stroke", "steelblue")
+                .attr("stroke-width", 2);
+
+            lines.push(line);
+
+            line.transition()
+                .duration(2000)
+                .attr("x2", x2)
+                .attr("y2", y2);
+
+            lineCount++;
+            if (lineCount === totalLines) {
+                clearInterval(interval);
+                setTimeout(() => {
+                    lines.forEach(line => {
+                        line.transition()
+                            .duration(1000)
+                            .style("opacity", 0)
+                            .remove();
+                    });
+                    lines = [];
+                    lineCount = 0;
+                    setTimeout(startDrawing, 1000); // Restart drawing
+                }, 2000); // Wait 2 seconds before starting to remove lines
+            }
+        }
+
+        function startDrawing() {
+            interval = setInterval(drawLine, 500);
+        }
+
+        // continously generating the lines
+        startDrawing();
+    </script>
+</body>
+</html>

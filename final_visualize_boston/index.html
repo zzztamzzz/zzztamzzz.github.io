@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boston Traffic Insights: Population and Public Projects Impact</title>
+    <title>Boston Traffic Insights</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
@@ -46,6 +46,10 @@
         </section>
         <section id="boston-population" class="content hidden">
             <h2>Population Increase in Boston</h2>
+            <p>The more people you have in a given space, the higher the likelihood of congestion and reduced free space. This concept is crucial in understanding urban planning and traffic management.</p>
+            <div class="charts-container">
+                <iframe src="charts/bubble_space.html" frameborder="0"></iframe>
+            </div>
             <p>Understanding the population trends in Boston over the years gives us a fascinating glimpse into the city's growth and development. Our visualization combines a bar chart representing the population count and a line chart showing the annual percentage change from 1950 to 2023. This comprehensive view allows us to see not only the overall increase in population but also the year-by-year fluctuations.</p>
             <p><strong>Key Observations:</strong></p>
             <ul>
@@ -58,7 +62,7 @@
                 <li><strong>Recent Decline (2018-2019):</strong> A more recent decrease occurred between 2018 and 2019, where the percentage change dropped from 0.37% in 2018 to -0.02% in 2019. This slight negative growth might indicate specific short-term challenges that impacted the population during that year.</li>
                 <li><strong>Historical Fact:</strong> The decline from 2018 to 2019 likely reflects the early impacts of the COVID-19 pandemic. The pandemic caused significant disruptions to daily life, economic activities, and migration patterns, leading to changes in population growth.</li>
                 <li><strong>Steady Climb Since 2019:</strong> Since 2019, Boston has been witnessing a steady climb in population. This trend suggests a recovery and consistent growth, highlighting the city's ongoing appeal and resilience.</li>
-                <li><strong>Fact:</strong> The steady climb since 2019 may be attributed to the gradual recovery from the initial shock of the COVID-19 pandemic, as well as continued economic development and urban renewal projects in Boston.</li>
+                <li><strong>Historical Fact:</strong> The steady climb since 2019 may be attributed to the gradual recovery from the initial shock of the COVID-19 pandemic, as well as continued economic development and urban renewal projects in Boston.</li>
             </ul>
             <p><strong>Overall Trends:</strong> The chart spans over seven decades, showing how the population has generally increased despite the fluctuations in annual percentage changes. While some years saw significant rises and falls, the long-term trend points towards a growing city, adapting and thriving through various phases.</p>
             <p><strong>Fun Facts:</strong></p>
@@ -69,15 +73,22 @@
             <div class="charts-container population-charts">
                 <iframe src="charts/boston_population_combination_chart.html" frameborder="0"></iframe>
             </div>
-            <p>Chart Legend:</p>
+            <p>The colors used in the population chart are:</p>
             <ul>
-                <li style="color: #091F2F;">Charles Blue: Boston Population</li>
-                <li style="color: #FB4D42;">Freedom Trail Red: Annual Percentage Change</li>
+                <li style="color: #091F2F;">Charles Blue: Boston population data</li>
+                <li style="color: #FB4D42;">Freedom Trail Red: Other relevant data</li>
+                <!-- Add other relevant descriptions and colors here -->
             </ul>
             <div class="page-number">2 of 5</div>
         </section>
         <section id="projects" class="content hidden">
             <h2>City Projects in Boston</h2>
+            <p>It's easier to not get lost and confused when you follow a pattern. Most times, simple is better than complex.</p>
+            <p>Imagine the grid represents your city space. Instead of making complicated pathways on the grid, just follow along.</p>
+            <div class="charts-container side-by-side">
+                <iframe src="charts/organized_lines.html" frameborder="0"></iframe>
+                <iframe src="charts/randLines.html" frameborder="0"></iframe>
+            </div>
             <p>Boston's development over the years is marked by various public projects aimed at improving infrastructure, public spaces, and overall quality of life. Our visualization combines a stacked bar chart representing different stages of project completion and a line chart showing total spending on these projects from 1950 to 2023. This comprehensive view allows us to see not only the types and statuses of public projects but also the financial investment in them.</p>
             <p><strong>Key Observations:</strong></p>
             <ul>
@@ -107,10 +118,11 @@
                 <li style="color: #2ca02c;">Green: Projected Projects</li>
                 <li style="color: #9467bd;">Purple: In Construction Projects</li>
                 <li style="color: #d62728;">Red: Cancelled Projects</li>
-                <li style="color: #8c564b;">Brown: Total Spending Towards Projects For The Year</li>
+                <li style="color: #8c564b;">Brown: Total Spending</li>
             </ul>
             <div class="page-number">3 of 5</div>
         </section>
+        
         <section id="conclusion" class="content hidden">
             <h2>Conclusion</h2>
             <p>The data visualizations presented in this article highlight two critical factors impacting traffic in Boston: the steady increase in population and the numerous public projects aimed at improving the city's infrastructure. As we analyze these trends, several key insights emerge that underscore the need for strategic planning and effective execution.</p>
@@ -149,7 +161,7 @@
         </section>
     </main>
     <footer>
-        <p>2024 Boston Traffic Insights. All rights reserved.</p>
+        <p>© 2024 Boston Traffic Insights. All rights reserved.</p>
     </footer>
     <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
     <script src="script.js"></script>

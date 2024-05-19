@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Congestion Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            width: 50%;
+            height: 50%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+        .bubble {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+            opacity: 0;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="bubble-container"></div>
+    <script>
+        const container = document.getElementById('bubble-container');
+        const bubbleSize = 40;
+        const spacing = 4;
+        const maxBubbles = 100;
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function createBubble(x, y, delay) {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.style.left = `${x}px`;
+            bubble.style.top = `${y}px`;
+            bubble.style.backgroundColor = getRandomColor();
+            bubble.style.animationDelay = `${delay}s`;
+            container.appendChild(bubble);
+            setTimeout(() => bubble.style.opacity = '1', delay * 1000); // Delay visibility to sync with animation delay
+            return { element: bubble, x, y };
+        }
+
+        function isSpaceAvailable(x, y, bubbles) {
+            for (let i = 0; i < bubbles.length; i++) {
+                const bubble = bubbles[i];
+                const distance = Math.sqrt((bubble.x - x) ** 2 + (bubble.y - y) ** 2);
+                if (distance < bubbleSize + spacing) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function generateBubbles() {
+            const bubbles = [];
+            const containerRect = container.getBoundingClientRect();
+            for (let i = 0; i < maxBubbles; i++) {
+                let x, y;
+                let tries = 0;
+                const maxTries = 100;
+
+                do {
+                    x = Math.random() * (containerRect.width - bubbleSize);
+                    y = Math.random() * (containerRect.height - bubbleSize);
+                    tries++;
+                } while (!isSpaceAvailable(x, y, bubbles) && tries < maxTries);
+
+                if (tries < maxTries) {
+                    const delay = i * 0.1; // Staggered delay for each bubble
+                    bubbles.push(createBubble(x, y, delay));
+                }
+            }
+            return bubbles;
+        }
+
+        function resetAnimation() {
+            container.innerHTML = ''; // Clear bubbles
+            setTimeout(startAnimation, 500); // Restart the animation after a delay
+        }
+
+        function startAnimation() {
+            generateBubbles();
+            setTimeout(resetAnimation, maxBubbles * 100 + 5000); // Restart the animation after all bubbles appear and pulse for a while
+        }
+
+        startAnimation(); // Start the animation loop
+    </script>
+</body>
+</html>
