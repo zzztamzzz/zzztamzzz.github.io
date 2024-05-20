@@ -28,7 +28,7 @@
             height: 40px;
             border-radius: 50%;
             animation: pulse 2s infinite;
-            opacity: 1; /* Set opacity to 1 by default */
+            opacity: 0;
         }
         @keyframes pulse {
             0% {
@@ -48,7 +48,7 @@
     <script>
         const container = document.getElementById('bubble-container');
         const bubbleSize = 40;
-        const spacing = 10; // Increase spacing to avoid overlap
+        const spacing = 4;
         const maxBubbles = 100;
 
         function getRandomColor() {
@@ -68,6 +68,7 @@
             bubble.style.backgroundColor = getRandomColor();
             bubble.style.animationDelay = `${delay}s`;
             container.appendChild(bubble);
+            setTimeout(() => bubble.style.opacity = '1', delay * 1000); // Delay visibility to sync with animation delay
             return { element: bubble, x, y };
         }
 
@@ -75,7 +76,7 @@
             for (let i = 0; i < bubbles.length; i++) {
                 const bubble = bubbles[i];
                 const distance = Math.sqrt((bubble.x - x) ** 2 + (bubble.y - y) ** 2);
-                if (distance < (bubbleSize / 2 + spacing)) { // Adjust distance calculation
+                if (distance < bubbleSize + spacing) {
                     return false;
                 }
             }
